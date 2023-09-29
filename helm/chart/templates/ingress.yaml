@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: demo-ingress
+  namespace: suxess-it-qa
+  labels:
+    app: demo
+    backstage.io/kubernetes-id: demo
+spec:
+  ingressClassName: openshift-default
+  rules:
+  - host: demo-suxess-it-qa.apps.cluster1.mcp.pitagora.at
+    http:
+      paths:
+      - backend:
+          service:
+            name: demo
+            port:
+              number: 8080
+        path: /
+        pathType: Prefix

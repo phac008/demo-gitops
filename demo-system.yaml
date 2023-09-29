@@ -1,0 +1,9 @@
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: demo
+  description: demo
+  labels:
+    environments: qa
+spec:
+  owner: group:default/philipp
